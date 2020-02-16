@@ -1,0 +1,38 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ordena;
+
+/**
+ *
+ * @author Vitor
+ */
+public class OrdenaVetor {
+    private String vetor[];
+
+    public OrdenaVetor(String[] vetor) {
+    this.vetor = vetor;
+    }
+    
+    // Método para ordenar o vetor em ordem alfabética
+    public void ordenar() {
+      for ( int i = 0; i<vetor.length;i++ ) {
+        for ( int j = 0; j< vetor.length && i != j; j++ ) {
+          if (vetor[i].compareToIgnoreCase(vetor[j]) < 0) {
+            String aux = vetor[i];
+            vetor[i] = vetor[j];
+            vetor[j] = aux;
+          }
+        }
+      }
+    }
+    
+    // Método para mostrar o vetor já ordenado
+    public void mostrar() {
+      for ( String a : vetor ) {
+        System.out.println(a);
+      }
+    }
+}
